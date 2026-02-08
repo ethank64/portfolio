@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 import { projects, type Project } from '../data/projects';
 import ProjectCard from './ProjectCard';
@@ -66,7 +67,7 @@ const Projects: React.FC = () => {
             </button>
 
             <div className="modal-image">
-              <img src={selectedProject.image} alt={`${selectedProject.title} project preview`} />
+              <img src={selectedProject.image} alt={`${selectedProject.title} project preview`} loading="lazy" />
             </div>
 
             <div className="modal-body">
@@ -94,7 +95,10 @@ const Projects: React.FC = () => {
               </div>
 
               <div className="modal-links">
-                <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                <Link to={`/projects/${selectedProject.id}`} className="btn btn-primary">
+                  Project Page
+                </Link>
+                <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                   View Code
                 </a>
                 {selectedProject.liveUrl && (

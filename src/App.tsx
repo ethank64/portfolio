@@ -1,6 +1,5 @@
+import React, { Suspense, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
 import './App.css';
 
 // Components
@@ -9,31 +8,41 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import Background3D from './components/Background3D';
+import ProjectDetail from './pages/ProjectDetail';
+
+const BackgroundScene = React.lazy(() => import('./components/BackgroundScene'));
 
 function App() {
+  const [showBackground, setShowBackground] = useState(false);
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setShowBackground(true), 600);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <Navigation />
         <Routes>
-          <Route path="/" element={
-            <div className="main-content">
-              <Canvas
-                camera={{ position: [0, 0, 5], fov: 75 }}
-                style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
-              >
-                <Environment preset="sunset" />
-                <Background3D />
-                <OrbitControls enableZoom={false} enablePan={false} />
-              </Canvas>
+          <Route
+            path="/"
+            element={
+              <div className="main-content">
+                {showBackground && (
+                  <Suspense fallback={null}>
+                    <BackgroundScene />
+                  </Suspense>
+                )}
 
-              <Hero />
-              <About />
-              <Projects />
-              <Contact />
-            </div>
-          } />
+                <Hero />
+                <About />
+                <Projects />
+                <Contact />
+              </div>
+            }
+          />
+          <Route path="/projects/:projectId" element={<ProjectDetail />} />
         </Routes>
       </div>
     </Router>
