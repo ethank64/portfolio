@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 import type { Project } from '../data/projects';
 
 interface ProjectCardProps {
@@ -23,6 +24,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, index, featured = false, o
         <img src={project.image} alt={`${project.title} project preview`} loading="lazy" />
         <div className="project-overlay">
           <div className="project-links">
+            <Link to={`/projects/${project.id}`} className="project-link">
+              <span>Details</span>
+            </Link>
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
               <span>GitHub</span>
             </a>
