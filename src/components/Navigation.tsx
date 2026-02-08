@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +26,19 @@ const Navigation: React.FC = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+      return;
     }
-    setIsMobileMenuOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: targetId } });
+      setIsMobileMenuOpen(false);
+    }
   };
 
   return (
