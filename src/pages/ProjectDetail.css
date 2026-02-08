@@ -68,6 +68,12 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.project-detail-demo {
+  color: #aab4ff;
+  font-weight: 600;
 }
 
 .project-detail-body {

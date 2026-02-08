@@ -1,0 +1,28 @@
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.95) 0%, rgba(20, 20, 40, 0.95) 100%);
+  color: #fff;
+}
+
+.not-found-card {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.not-found-card h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-card p {
+  color: #c6c6c6;
+  margin-bottom: 1.5rem;
+}

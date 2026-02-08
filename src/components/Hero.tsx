@@ -79,6 +79,15 @@ const Hero: React.FC = () => {
             >
               View Resume
             </motion.a>
+            <motion.a
+              className="btn btn-secondary"
+              href="/resume.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download Resume
+            </motion.a>
             <motion.button
               className="btn btn-secondary"
               onClick={scrollToContact}

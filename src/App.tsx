@@ -9,6 +9,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ProjectDetail from './pages/ProjectDetail';
+import NotFound from './pages/NotFound';
 
 const BackgroundScene = React.lazy(() => import('./components/BackgroundScene'));
 
@@ -43,6 +44,7 @@ function App() {
             }
           />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
