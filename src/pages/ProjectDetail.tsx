@@ -52,10 +52,12 @@ const ProjectDetail: React.FC = () => {
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 View Code
               </a>
-              {project.liveUrl && (
+              {project.liveUrl ? (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                   Live Demo
                 </a>
+              ) : (
+                <span className="project-detail-demo">Demo: Not available</span>
               )}
             </div>
           </div>

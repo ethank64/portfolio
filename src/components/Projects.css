@@ -186,6 +186,28 @@
   gap: 2rem;
 }
 
+.currently-building {
+  margin-top: 4rem;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.currently-building h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.currently-building p {
+  color: #c6c6c6;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
 .other-projects-grid .project-card {
   grid-column: span 1;
 }

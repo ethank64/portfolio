@@ -45,6 +45,14 @@ const Projects: React.FC = () => {
             />
           ))}
         </div>
+
+        <div className="currently-building">
+          <h3>Currently Building</h3>
+          <p>
+            Expanding the portfolio with deeper case studies, cleaner project architecture, and polished demos.
+            More builds coming soon.
+          </p>
+        </div>
       </div>
 
       {selectedProject && (
