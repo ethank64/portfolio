@@ -44,10 +44,9 @@ const Contact: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: 'fab fa-github' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'fab fa-linkedin' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: 'fab fa-twitter' },
-    { name: 'Email', url: 'mailto:ethan@example.com', icon: 'fas fa-envelope' }
+    { name: 'GitHub', url: 'https://github.com/ethank64', icon: 'fab fa-github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ethan-knotts-4b349a2b6/', icon: 'fab fa-linkedin' },
+    { name: 'Email', url: 'mailto:eknotts64@gmail.com', icon: 'fas fa-envelope' }
   ];
 
   return (
