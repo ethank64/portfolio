@@ -3,20 +3,6 @@ import { motion } from 'framer-motion';
 import './About.css';
 
 const About: React.FC = () => {
-  const skills = [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Node.js', level: 85 },
-    { name: 'Python', level: 80 },
-    { name: 'Three.js', level: 75 },
-    { name: 'AWS', level: 70 },
-  ];
-
-  const technologies = [
-    'React', 'TypeScript', 'Node.js', 'Python', 'Three.js', 'AWS',
-    'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'GraphQL', 'REST APIs'
-  ];
-
   return (
     <section id="about" className="about">
       <div className="container">
@@ -71,58 +57,46 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="skills-title">Technical Skills</h3>
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="skill-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="skill-header">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <motion.div
-                      className="skill-progress"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
+
+            <div className="skills-groups">
+              <div className="skills-group">
+                <h4 className="skills-group-title">Languages &amp; Core</h4>
+                <div className="skills-icons">
+                  <img src="https://skillicons.dev/icons?i=python" alt="Python" />
+                  <img src="https://skillicons.dev/icons?i=cpp" alt="C++" />
+                  <img src="https://skillicons.dev/icons?i=cs" alt="C#" />
+                  <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
+                  <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
+                  <img src="https://skillicons.dev/icons?i=html" alt="HTML" />
+                  <img src="https://skillicons.dev/icons?i=css" alt="CSS" />
+                  <img src="https://skillicons.dev/icons?i=scss" alt="SCSS" />
+                </div>
+              </div>
+
+              <div className="skills-group">
+                <h4 className="skills-group-title">Frameworks &amp; Libraries</h4>
+                <div className="skills-icons">
+                  <img src="https://skillicons.dev/icons?i=react" alt="React" />
+                  <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" />
+                  <img src="https://skillicons.dev/icons?i=angular" alt="Angular" />
+                  <img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI" />
+                  <img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" />
+                  <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" />
+                  <img src="https://skillicons.dev/icons?i=p5js" alt="p5.js" />
+                </div>
+              </div>
+
+              <div className="skills-group">
+                <h4 className="skills-group-title">Platforms &amp; Tools</h4>
+                <div className="skills-icons">
+                  <img src="https://skillicons.dev/icons?i=aws" alt="AWS" />
+                  <img src="https://skillicons.dev/icons?i=terraform" alt="Terraform" />
+                  <img src="https://skillicons.dev/icons?i=docker" alt="Docker" />
+                  <img src="https://skillicons.dev/icons?i=unity" alt="Unity" />
+                </div>
+              </div>
             </div>
           </motion.div>
-        </motion.div>
-        
-        <motion.div
-          className="technologies-section"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="technologies-title">Technologies & Tools</h3>
-          <div className="technologies-grid">
-            {technologies.map((tech, index) => (
-              <motion.div
-                key={tech}
-                className="tech-badge"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {tech}
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
