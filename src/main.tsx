@@ -27,8 +27,13 @@ const GlobalStyles = createGlobalStyle`
     font-display: block;
   }
 
+  :root {
+    --font-chrome: 'ms_sans_serif', sans-serif;
+    --font-content: 'Tahoma', 'Verdana', 'Geneva', sans-serif;
+  }
+
   body, html, #root {
-    font-family: 'ms_sans_serif', sans-serif;
+    font-family: var(--font-chrome);
   }
 `;
 

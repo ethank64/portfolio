@@ -33,26 +33,31 @@ const Title = styled.div`
 `;
 
 const Summary = styled.div`
-  font-size: 12px;
+  font-family: var(--font-content);
+  font-size: 13px;
   color: #333;
   margin-top: 4px;
+  line-height: 1.4;
 `;
 
 const Body = styled.div`
   flex: 1;
   min-height: 0;
   overflow: auto;
-  font-size: 13px;
-  line-height: 1.5;
+  font-family: var(--font-content);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 4px 2px;
 `;
 
 const Pill = styled.span`
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 10px;
   margin: 0 4px 4px 0;
   background: #e8e8e8;
   border: 1px solid #808080;
-  font-size: 11px;
+  font-family: var(--font-content);
+  font-size: 12px;
 `;
 
 const Buttons = styled.div`

@@ -30,14 +30,17 @@ const SectionTitle = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px;
-  font-size: 12px;
+  margin-bottom: 8px;
+  font-family: var(--font-content);
+  font-size: 13px;
 `;
 
 const Label = styled.span`
   color: #555;
+  font-family: var(--font-content);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 `;
 
 const Form = styled.form`
@@ -58,8 +61,10 @@ const Toast = styled.div`
   margin-top: 6px;
   background: #ffffe1;
   border: 1px solid #808080;
-  padding: 6px 10px;
-  font-size: 12px;
+  padding: 8px 10px;
+  font-family: var(--font-content);
+  font-size: 13px;
+  line-height: 1.5;
 `;
 
 interface FormState {

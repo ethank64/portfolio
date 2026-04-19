@@ -31,7 +31,8 @@ const Page = styled(Frame).attrs({ variant: 'field' })`
   background: #fff;
   padding: 18px 22px;
   overflow: auto;
-  font-size: 13px;
+  font-family: var(--font-content);
+  font-size: 14px;
   line-height: 1.6;
   color: #000;
 `;

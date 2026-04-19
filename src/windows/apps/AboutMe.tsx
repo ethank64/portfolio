@@ -5,10 +5,10 @@ const NotepadArea = styled.div`
   flex: 1;
   background: #fff;
   border: 2px inset #c0c0c0;
-  padding: 12px 14px;
-  font-family: 'ms_sans_serif', sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
+  padding: 14px 16px;
+  font-family: var(--font-content);
+  font-size: 14px;
+  line-height: 1.6;
   color: #000;
   overflow: auto;
   white-space: pre-wrap;
