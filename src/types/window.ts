@@ -8,7 +8,8 @@ export type AppId =
   | 'ie'
   | 'recycle'
   | 'minesweeper'
-  | 'paint';
+  | 'paint'
+  | 'msdos';
 
 export interface WindowInstance {
   id: string;

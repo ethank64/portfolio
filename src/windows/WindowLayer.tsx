@@ -8,6 +8,7 @@ import {
   Mspaint,
   Winmine1,
   Wininet32546,
+  MsDos,
 } from '@react95/icons';
 import { useWindowManager } from './WindowManager';
 import { DraggableWindow } from './DraggableWindow';
@@ -21,7 +22,8 @@ import { InternetExplorer } from './apps/InternetExplorer';
 import { RecycleBin } from './apps/RecycleBin';
 import { Minesweeper } from './apps/Minesweeper';
 import { Paint } from './apps/Paint';
-import type { AppId } from '../types/window';
+import { MsDos as MsDosApp } from './apps/MsDos';
+import type { AppId, WindowInstance } from '../types/window';
 import type { JSX } from 'react';
 
 const Layer = styled.div`
@@ -57,10 +59,13 @@ function appIcon(appId: AppId): JSX.Element {
       return <Winmine1 {...props} />;
     case 'paint':
       return <Mspaint {...props} />;
+    case 'msdos':
+      return <MsDos variant="16x16_32" />;
   }
 }
 
-function renderApp(appId: AppId, payload?: Record<string, unknown>): JSX.Element {
+function renderApp(win: WindowInstance): JSX.Element {
+  const { appId, payload, id } = win;
   switch (appId) {
     case 'mycomputer':
       return <MyComputer />;
@@ -82,6 +87,8 @@ function renderApp(appId: AppId, payload?: Record<string, unknown>): JSX.Element
       return <Minesweeper />;
     case 'paint':
       return <Paint />;
+    case 'msdos':
+      return <MsDosApp winId={id} />;
   }
 }
 
@@ -91,7 +98,7 @@ export function WindowLayer() {
     <Layer>
       {windows.map(w => (
         <DraggableWindow key={w.id} win={w} icon={appIcon(w.appId)}>
-          {renderApp(w.appId, w.payload)}
+          {renderApp(w)}
         </DraggableWindow>
       ))}
     </Layer>

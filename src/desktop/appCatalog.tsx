@@ -7,6 +7,7 @@ import {
   Mspaint,
   Winmine1,
   Wininet32546,
+  MsDos,
 } from '@react95/icons';
 import type { JSX } from 'react';
 import type { AppId } from '../types/window';
@@ -92,6 +93,14 @@ export const APPS: AppDefinition[] = [
     size: { width: 460, height: 320 },
     icon32: <RecycleEmpty variant="32x32_4" />,
     icon16: <RecycleEmpty variant="16x16_4" />,
+  },
+  {
+    appId: 'msdos',
+    label: 'MS-DOS Prompt',
+    title: 'MS-DOS Prompt',
+    size: { width: 640, height: 400 },
+    icon32: <MsDos variant="32x32_32" />,
+    icon16: <MsDos variant="16x16_32" />,
   },
 ];
 
