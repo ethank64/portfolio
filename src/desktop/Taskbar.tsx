@@ -32,18 +32,18 @@ const StartButton = styled(Button)<{ $open: boolean }>`
       : ''}
 `;
 
-const StartIcon = styled.div`
-  width: 18px;
-  height: 18px;
-  background:
-    linear-gradient(45deg, #ff0000 25%, transparent 25%) -1px 0,
-    linear-gradient(135deg, #00ff00 25%, transparent 25%) -1px 0,
-    linear-gradient(225deg, #0000ff 25%, transparent 25%) -1px 0,
-    linear-gradient(315deg, #ffff00 25%, transparent 25%) -1px 0,
-    #fff;
-  background-size: 9px 9px;
-  background-repeat: no-repeat;
-`;
+const StartIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+    <g transform="skewY(-12)" style={{ transformOrigin: '9px 9px' }}>
+      <rect x="1" y="3"  width="7" height="6" fill="#ff3b30" />
+      <rect x="9" y="3"  width="8" height="6" fill="#34c759" />
+      <rect x="1" y="10" width="7" height="6" fill="#0a84ff" />
+      <rect x="9" y="10" width="8" height="6" fill="#ffcc00" />
+      <line x1="1" y1="9.5" x2="17" y2="9.5" stroke="#fff" strokeWidth="0.8" />
+      <line x1="8.5" y1="3" x2="8.5" y2="16" stroke="#fff" strokeWidth="0.8" />
+    </g>
+  </svg>
+);
 
 const TaskList = styled.div`
   flex: 1;
