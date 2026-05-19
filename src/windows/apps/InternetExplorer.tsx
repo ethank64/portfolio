@@ -104,7 +104,7 @@ export function InternetExplorer() {
         <hr style={{ margin: '12px 0', border: 'none', borderTop: '1px solid #c0c0c0' }} />
 
         <p>
-          You can browse my online haunts using the bookmarks above. Each one opens
+          You can browse my online presence using the bookmarks above. Each one opens
           in a new browser window because, well, the real Web doesn't render inside
           frames anymore.
         </p>
